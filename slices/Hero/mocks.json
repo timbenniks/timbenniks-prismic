@@ -1,0 +1,60 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?rect=0%2C1018%2C4000%2C1719&w=1280&h=550",
+				"width": 1280,
+				"height": 550,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 1018
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Tim Benniks"
+			},
+			"title_tag": {
+				"__TYPE__": "FieldContent",
+				"value": "h1",
+				"type": "Select"
+			},
+			"sub_title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "THIS IS A NICE SUBTITLE FOR THIS COMPONENT"
+			},
+			"sub_title_tag": {
+				"__TYPE__": "FieldContent",
+				"value": "h2",
+				"type": "Select"
+			},
+			"right": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"smaller_title": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			}
+		},
+		"items": []
+	}
+]
