@@ -1,6 +1,8 @@
 <template>
   <SliceSimulator #default="{ slices }">
-    <SliceZone :slices="slices" :components="components" />
+    <section class="bg-[#1b1d39]">
+      <SliceZone :slices="slices" :components="components" />
+    </section>
   </SliceSimulator>
 </template>
 

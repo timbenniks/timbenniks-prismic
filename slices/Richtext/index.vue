@@ -17,7 +17,6 @@ defineProps(
   <richtext
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-    class="bg-[#1b1d39]"
   >
     <prismic-rich-text :field="slice.primary.body" />
   </richtext>

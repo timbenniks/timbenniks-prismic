@@ -4,26 +4,25 @@
 		"variation": "default",
 		"primary": {
 			"image": {
+				"__TYPE__": "ImageContent",
+				"url": "https://images.unsplash.com/photo-1597588942474-cf4994da7575?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzIzNTU0ODgyfDA&ixlib=rb-4.0.3&q=85&rect=0%2C431%2C4032%2C1120&w=1800&h=500",
+				"alt": "yellow lemon fruit on brown wooden table",
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
-					"width": 4000,
-					"height": 4000
+					"id": "vCYeEUYGSKw",
+					"url": "https://images.unsplash.com/photo-1597588942474-cf4994da7575?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzIzNTU0ODgyfDA&ixlib=rb-4.0.3&q=85",
+					"width": 4032,
+					"height": 3024
 				},
-				"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?rect=0%2C1018%2C4000%2C1719&w=1280&h=550",
-				"width": 1280,
-				"height": 550,
+				"width": 1800,
+				"height": 500,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
-						"y": 1018
-					},
-					"background": "transparent"
+						"y": 431
+					}
 				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"title": {

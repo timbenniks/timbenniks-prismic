@@ -1,0 +1,52 @@
+{
+  "format": "custom",
+  "id": "video",
+  "label": "Video",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      },
+      "videoid": {
+        "type": "Text",
+        "config": {
+          "label": "videoId",
+          "placeholder": ""
+        }
+      },
+      "image": {
+        "type": "Text",
+        "config": {
+          "label": "Image",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

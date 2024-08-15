@@ -1,0 +1,23 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "radio",
+				"type": "Text"
+			},
+			"small": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"limit": {
+				"__TYPE__": "FieldContent",
+				"value": "22",
+				"type": "Number"
+			}
+		},
+		"items": []
+	}
+]

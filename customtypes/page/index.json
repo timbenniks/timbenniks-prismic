@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "videos": {
+              "type": "SharedSlice"
+            },
+            "talks": {
+              "type": "SharedSlice"
+            },
             "richtext": {
               "type": "SharedSlice"
             },

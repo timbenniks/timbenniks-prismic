@@ -1,0 +1,44 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "tide",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "ball",
+				"type": "Text"
+			},
+			"extras_url": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"small": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"firstfeatured": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"limit": {
+				"__TYPE__": "FieldContent",
+				"value": "77",
+				"type": "Number"
+			},
+			"tag": {
+				"__TYPE__": "FieldContent",
+				"value": "closer",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

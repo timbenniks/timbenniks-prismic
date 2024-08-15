@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = RichtextSlice | HeroSlice;
+type PageDocumentDataSlicesSlice =
+  | VideosSlice
+  | TalksSlice
+  | RichtextSlice
+  | HeroSlice;
 
 /**
  * Content for Page documents
@@ -137,7 +141,79 @@ interface TalkDocumentData {
 export type TalkDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<TalkDocumentData>, "talk", Lang>;
 
-export type AllDocumentTypes = PageDocument | TalkDocument;
+/**
+ * Content for Video documents
+ */
+interface VideoDocumentData {
+  /**
+   * Title field in *Video*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date field in *Video*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+
+  /**
+   * Description field in *Video*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * videoId field in *Video*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.videoid
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  videoid: prismic.KeyTextField;
+
+  /**
+   * Image field in *Video*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image: prismic.KeyTextField;
+}
+
+/**
+ * Video document from Prismic
+ *
+ * - **API ID**: `video`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VideoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<VideoDocumentData>, "video", Lang>;
+
+export type AllDocumentTypes = PageDocument | TalkDocument | VideoDocument;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -289,6 +365,173 @@ export type RichtextSlice = prismic.SharedSlice<
   RichtextSliceVariation
 >;
 
+/**
+ * Primary content in *Talks → Default → Primary*
+ */
+export interface TalksSliceDefaultPrimary {
+  /**
+   * Title field in *Talks → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: talks.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Small field in *Talks → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: talks.default.primary.small
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  small: prismic.BooleanField;
+
+  /**
+   * Limit field in *Talks → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: talks.default.primary.limit
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  limit: prismic.NumberField;
+}
+
+/**
+ * Default variation for Talks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TalksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TalksSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Talks*
+ */
+type TalksSliceVariation = TalksSliceDefault;
+
+/**
+ * Talks Shared Slice
+ *
+ * - **API ID**: `talks`
+ * - **Description**: Talks
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TalksSlice = prismic.SharedSlice<"talks", TalksSliceVariation>;
+
+/**
+ * Primary content in *Videos → Default → Primary*
+ */
+export interface VideosSliceDefaultPrimary {
+  /**
+   * Title field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videos.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videos.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Extras URL field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videos.default.primary.extras_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  extras_url: prismic.LinkField;
+
+  /**
+   * Small field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: videos.default.primary.small
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  small: prismic.BooleanField;
+
+  /**
+   * firstFeatured field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: videos.default.primary.firstfeatured
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  firstfeatured: prismic.BooleanField;
+
+  /**
+   * Limit field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videos.default.primary.limit
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  limit: prismic.NumberField;
+
+  /**
+   * Tag field in *Videos → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: videos.default.primary.tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Videos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideosSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideosSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Videos*
+ */
+type VideosSliceVariation = VideosSliceDefault;
+
+/**
+ * Videos Shared Slice
+ *
+ * - **API ID**: `videos`
+ * - **Description**: Videos
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideosSlice = prismic.SharedSlice<"videos", VideosSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -304,6 +547,8 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       TalkDocument,
       TalkDocumentData,
+      VideoDocument,
+      VideoDocumentData,
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,
@@ -313,6 +558,14 @@ declare module "@prismicio/client" {
       RichtextSliceDefaultPrimary,
       RichtextSliceVariation,
       RichtextSliceDefault,
+      TalksSlice,
+      TalksSliceDefaultPrimary,
+      TalksSliceVariation,
+      TalksSliceDefault,
+      VideosSlice,
+      VideosSliceDefaultPrimary,
+      VideosSliceVariation,
+      VideosSliceDefault,
     };
   }
 }
